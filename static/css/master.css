@@ -1,0 +1,126 @@
+
+.hide { display: none; }
+body, html { padding: 0; margin: 0; width: 100%; height: 100%; }
+body { background: #676767; background: -webkit-gradient(radial, 50% 50%, 10, 50% 100%, 1920, to(#232323), from(#a0a0a0)); background: -moz-radial-gradient(50% 50%, closest-corner, #a0a0a0, #555555); }
+textarea { font: 16pt/18pt 'Myriad Web Pro', 'Lucida Grande', 'Lucida Unicode Sans', Arial, sans; line-height: 1.3em; }
+#viewport { position: relative; width: 100%; height: 100%; font: 16pt/18pt 'Myriad Web Pro', 'Lucida Grande', 'Lucida Unicode Sans', Arial, sans; }
+#response { z-index: 3; position: absolute; top: 50px; right: 50px; max-width: 500px; margin-left: -330px; padding: 30px 30px; color: #dedede; text-align: left; background: rgba(10,10,10,0.5); border-radius: 15px; line-height: 1.3em; }
+#filedrop { cursor: move; position: fixed; left: 0; top: 0; margin: 0; width: 100%; height: 100%; background: rgba(10,10,10,0.5); z-index: 10; }
+#command { position: absolute; bottom: 0; left: 50%; width: 700px; height: 200px; margin-left: -350px; text-align: center; background: url(/images/bubble.png) no-repeat top center; }
+#command.active { background: url(/images/bubble_active.png) no-repeat top center; }
+#command .input { font-size: 1.6em; margin-top: 30px; width: 600px; height: 90px; padding: 7px; background: none; border: none; outline: none; resize: none; }
+#command .account { cursor: pointer; position: absolute; bottom: 18px; right: 150px; font-size: 1.3em; text-align: right; vertical-align: baseline; color: #5a5a5a; }
+#command .account:hover { color: #b9b9b9; }
+#test { line-height: 0; width: 100%; height: 100%; }
+
+/* Video Screen */
+.screen .video { position: absolute; left: 50%; top: 50%; margin: -340px -320px; display: block; width: 640; height: 480px; }
+
+/* Schedule Screen */
+#schedule_screen .day { position: absolute; left: 50%; top: 50%; margin: -202px 158px; display: block; background: url(../images/day.png) no-repeat center center; width: 317px; height: 284px; }
+#schedule_screen .day .title { margin: 40px 0 30px; font-size: 1.8em; text-align: center; color: #bebebe; }
+#schedule_screen .day .details { margin: 40px 0 0; font-size: 1em; text-align: center; color: #dbdbdb; }
+#schedule_screen .day .dayweek { margin: 40px 0 90px; font-size: 1.8em; text-align: center; color: #bebebe; }
+#schedule_screen .day .number { font-size: 9em; letter-spacing: -5px; text-align: center; color: #dbdbdb; }
+#schedule_screen .calendar { z-index: 1; position: absolute; top: 50%; left: 50%; margin: -150px -491px; line-height: 0; padding-top: 101px; padding-bottom: 16px; }
+#schedule_screen .calendar .date { display: block; position: absolute; top: -50px; left: 20px; font-size: 4.8em; letter-spacing: -5px; text-shadow: 0 1px 5px rgba(0,0,0,0.32); }
+#schedule_screen .calendar .date .month { color: #a7a6a6; }
+#schedule_screen .calendar .date .year { color: #c7c7c7; }
+#schedule_screen .calendar .head { display: block; position: absolute; top: 0; left: 0; background: url(../images/calendar_top.png) no-repeat center center; width: 743px; height: 101px; }
+#schedule_screen .calendar .body { display: block; position: relative; background: rgba(242,242,242,0.8); min-height: 50px; width: 720px; }
+#schedule_screen .calendar .body .events { z-index: 2; display: block; position: absolute; top: -40px; left: 1px; }
+#schedule_screen .calendar .body .events .bar { cursor: pointer; position: absolute; display: block; box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.17); }
+#schedule_screen .calendar .body .events .red.bar { background: url(../images/red_bar.png) repeat-x center top; height: 24px; }
+#schedule_screen .calendar .body .events .red.bar:hover { background: url(../images/red_bar_hover.png) repeat-x center top; }
+#schedule_screen .calendar .body .events .blue.bar { z-index: 1; margin-top: 14px; background: url(../images/blue_bar.png) repeat-x center top; height: 16px; }
+#schedule_screen .calendar .body .events .blue.bar:hover { background: url(../images/blue_bar_hover.png) repeat-x center top; }
+#schedule_screen .calendar .body .boxes { z-index: 1; display: block; position: absolute; top: -17px; left: 1px; font-size: 1.6em; color: #bcbcbc; }
+#schedule_screen .calendar .body .boxes .box { display: inline-block; position: relative; width: 102px; height: 49px; padding-bottom: 4px; text-align: center; }
+#schedule_screen .calendar .body .boxes .box.cur_month { color: #acacac; }
+#schedule_screen .calendar .body .rows { display: block; position: relative; top: -40px; left: -12px; }
+#schedule_screen .calendar .body .rows .row { display: block; background: url(../images/calendar_grid.png) no-repeat center center; width: 743px; height: 49px; }
+#schedule_screen .calendar .body .rows .space { display: block; background: url(../images/calendar_space.png) no-repeat center center; width: 743px; height: 4px; }
+#schedule_screen .calendar .foot { display: block; position: absolute; bottom: 0; left: 0; background: url(../images/calendar_bottom.png) no-repeat center center; width: 743px; height: 16px; }
+
+/* Today Screen */
+#today_screen .date { cursor: pointer; position: absolute; left: 50%; top: 50%; margin: -100px -400px; display: block; text-align: center; width: 800px; height: 200px; line-height: 0; font-size: 3em; }
+#today_screen .date div { display: inline-block; }
+#today_screen .date .month { color: #696969; }
+#today_screen .date .day { color: #696969; }
+#today_screen .date .year { color: #787878; }
+
+/* Weather Screen */
+#weather_screen .weather { cursor: pointer; position: absolute; left: 50%; top: 50%; margin: -100px -400px; display: block; text-align: center; width: 800px; height: 200px; line-height: 0; font-size: 3em; }
+#weather_screen .weather .condition { display: inline-block; position: relative; color: #dddddd; letter-spacing: -1px; text-shadow: 1px 1px 10px #696969; filter: dropshadow(color=#696969, offx=1, offy=1); }
+#weather_screen .weather .temperature { display: inline-block; position: relative; margin-left: 40px; font-size: 1.5em; text-shadow: 1px 1px 10px #545454; filter: dropshadow(color=#545454, offx=1, offy=1); }
+#weather_screen .weather .temperature .number { color: #f5f5f5; }
+#weather_screen .weather .temperature .unit { margin: 0 0 0 -15px; color: #cecece; font-size: 0.8em; }
+#weather_screen .location { cursor: pointer; position: absolute; left: 50%; top: 50%; margin: 10px -400px; display: block; text-align: center; width: 800px; height: 200px; line-height: 0; font-size: 2em; }
+#weather_screen .location .primary { color: #696969; }
+#weather_screen .location .secondary { color: #787878; }
+
+/* Login Screen */
+#login_screen .guest { cursor: pointer; color: #696969; position: absolute; left: 50%; top: 50%; margin: 100px -198px; display: block; background: url(../images/guest.png) no-repeat center center; text-align: center; width: 337px; height: 72px; line-height: 2.1em; font-size: 1.6em; }
+#login_screen .guest:hover { background: url(../images/guest_hover.png) no-repeat center center; }
+#login_screen .guest em { font-style: normal; color: #2f2f2f; }
+#login_screen .frame { position: absolute; left: 50%; top: 50%; margin: -205px -350px; display: block; background: url(../images/login_frame.png) no-repeat center center; width: 700px; height: 250px; }
+#login_screen .form { position: absolute; left: 50%; top: 50%; margin: -205px -350px; display: block; background: url(../images/login_bg.png) no-repeat center center; padding: 50px; width: 600px; height: 150px; line-height: 0; }
+#login_screen .form .signup { z-index: 1; position: absolute; right: 75px; top: 60px; font-size: 1em; letter-spacing: 0; padding: 0; margin: 0; line-height: 1.5em; padding: 0 10px; height: 220px; color: #676767; }
+#login_screen .form .signup p { margin: 20px 0; padding: 0; }
+#login_screen .form .signup button { font-size: 0.8em; padding: 3px 10px; min-width: 100px; }
+#login_screen .form .signup button.em { font-size: 0.9em; padding: 3px 10px; min-width: 100px; }
+#login_screen .form .info { opacity: 0; position: absolute; top: 0px; left: 85px; font-size: 1em; letter-spacing: 0; padding: 0; margin: 0; line-height: 1.5em; padding: 0 10px; height: 30px; color: #a0a0a0; background: rgba(0,0,0,0.4); }
+#login_screen .form .logo { position: relative; top: 25px; left: 25px; display: inline-block; background: url(../images/login_logo.png) no-repeat center center; width: 101px; height: 101px; }
+#login_screen .form .textbox { position: relative; margin: 0; display: block; background: url(../images/login_textbox.png) no-repeat center center; width: 422px; height: 49px; text-align: center; }
+#login_screen .form .textbox .input { position: absolute; top: 8px; left: 10px; width: 400px; font-size: 1.2em; color: #2f2f2f; border: none; background: none; outline: none; }
+#login_screen .form .textbox .underlay { position: absolute; top: 25px; color: #939393; width: 400px; font-size: 1.2em; }
+#login_screen .form .textbox .underlay.active { opacity: 0; }
+#login_screen .form .email { position: absolute; top: 70px; }
+#login_screen .form .password { position: absolute; top: 130px; }
+
+/* Alarm Screen */
+#alarm_screen #editbox { cursor: pointer; position: absolute; left: 50%; top: 50%; margin: -95px -200px; width: 400px; height: 150px; background: rgba(10,10,10,0.1); }
+#alarm_screen #helpbox { cursor: pointer; position: absolute; left: 50%; top: 50%; margin: -95px -650px; width: 440px; height: 304px; background: url(/images/help.png) no-repeat top left; }
+#alarm_screen #helpbox .label { display: block; margin: 35px 40px 0; font-size: 0.9em; color: #525050; text-transform: uppercase; }
+#alarm_screen #helpbox .title { display: block; margin: 5px 40px; font-size: 0.9em; color: #afafaf; text-transform: uppercase; }
+#alarm_screen #helpbox .commands { display: block; margin: 20px 40px; font-size: 0.9em; color: #f1f1f1; }
+#alarm_screen #music { position: absolute; top: 100px; left: 50%; margin: 0 -250px; width: 847px; height: 720px; overflow: auto; background: rgba(50,50,50,0.91); }
+#alarm_screen #music .label { display: inline-block; padding: 5px 10px; margin-right: 30px; font-size: 0.9em; color: #909090; text-transform: uppercase; }
+#alarm_screen #music a { cursor: pointer; color: #eaeaea; display: inline; padding: 4px; background: rgba(60,60,60,0.7); font-size: 0.8em; text-transform: uppercase; }
+#alarm_screen #music .close { cursor: pointer; position: absolute; bottom: 0px; left: 0px; margin: 0; padding: 14px 30px; font-size: 0.8em; color: #bfbfbf; background: #434343; outline: none; border: none; }
+#alarm_screen #music .close:hover { background: #434343; }
+#alarm_screen #music .list { width: 100%; color: #cccccc; font-size: 0.8em; text-shadow: none; filter: none; }
+#alarm_screen #music .list tr { cursor: pointer; background: rgba(100, 100, 100, 0.2); }
+#alarm_screen #music .list tr:nth-child(2n) { background: rgba(120, 120, 120, 0.3); }
+#alarm_screen #music .list tr.selected { color: #ffffff; background: rgba(45,124,255,0.7); }
+#alarm_screen #music .list tr.playing { background: #255ab0; }
+#alarm_screen #music .list td { padding: 2px 5px; white-space: nowrap; }
+#alarm_screen #config { position: absolute; top: 50%; left: 50%; margin: -66px 218px; width: 386px; height: 111px; background: url(/images/music_underlay.png) no-repeat top left; }
+#alarm_screen #config .selection { cursor: pointer; -moz-opacity:0; filter: alpha(opacity:0); opacity: 0; position: absolute; top: 0px; left: 0px; background: none; width: 386px; height: 111px; z-index: 1; }
+#alarm_screen #config .info { position: absolute; top: 0; left: 0; margin: 20px 0 0 135px; font-size: 0.8em; }
+#alarm_screen #config .info .label { color: #525050; text-transform: uppercase; }
+#alarm_screen #config .info .text { padding-top: 10px; color: #bfbfbf; }
+#alarm_screen #config.active { background: url(/images/music_overlay.png) no-repeat top left; }
+#alarm_screen #config.active .info { opacity: 0.6; }
+#alarm_screen #config.active .info .label { color: #405868; }
+#alarm_screen #alarm { position: absolute; top: 50%; left: 50%; margin: -472px -550px; width: 685px; height: 360px; background: url(/images/alarm.png) no-repeat top left; }
+#alarm_screen #alarm .label { padding: 25px 50px; font-size: 0.9em; color: #525050; text-transform: uppercase; }
+#alarm_screen #alarm .details { padding: 10px 50px; font-size: 0.9em; color: #525050; text-transform: normal; }
+#alarm_screen #alarm .details .date { font-size: 1.5em; margin-bottom: 25px; width: 350px; line-height: 0.8em; color: #dddddd; text-transform: normal; }
+#alarm_screen #alarm .details .countdown { font-size: 1.6em; letter-spacing: -2px; color: #bfbfbf; text-transform: normal; }
+#alarm_screen #alarm .details .countdown .label { font-size: 0.6em; padding: 0 10px 0 5px; color: #979797; text-transform: lowercase; }
+#alarm_screen #alarm .details .time { position: relative; margin-top: 45px; width: 300px; font-size: 4.5em; letter-spacing: -5px; }
+#alarm_screen #alarm .details .time .hours,
+#alarm_screen #alarm .details .time .minutes,
+#alarm_screen #alarm .details .time .ampm .active { color: #eef7fc; text-shadow: 0 0 10px #d7e6fe; filter: dropshadow(color=#d7e6fe, offx=0, offy=0); }
+#alarm_screen #alarm .details .time .colon { color: #eef7fc; display: inline-block; position: relative; vertical-align: top; top: -6px; left: -7px; letter-spacing: -15px; padding: 0; text-shadow: 0 0 13px #d7e6fe; filter: dropshadow(color=#d7e6fe, offx=0, offy=0); }
+#alarm_screen #alarm .details .time .ampm { position: absolute; right: 15px; top: -20px; font-size: 0.4em; line-height: 0.9em; letter-spacing: -3px; text-transform: uppercase; }
+#alarm_screen #alarm .noset { padding: 40px 0; width: 400px; text-align: center; font-size: 1.2em; color: #bfbfbf; text-transform: uppercase; }
+#alarm_screen #alarm .clock { position: absolute; top: 0; right: 0; margin: 40px; width: 238px; height: 238px; background: url(/images/clock.png) no-repeat top center; }
+#alarm_screen #alarm .bar { position: absolute; top: 0; right: 0; margin: 40px; width: 238px; height: 238px; background: none; -webkit-transform: rotate(45deg); }
+#alarm_screen #mail { position: absolute; top: 30px; right: 30px; width: 250px; height: 150px; background: url(/images/mail.png) no-repeat top left; }
+#alarm_screen #mail .number { position: absolute; top: 30px; right: 40px; text-align: center; width: 80px; overflow: none; color: #fafafa; letter-spacing: -2px; font-size: 1.6em; font-weight: bold; }
+#alarm_screen #clock { cursor: pointer; position: absolute; top: 50%; left: 50%; margin: -30px 0 0 -200px; min-width: 400px; height: 60px; text-align: center; color: #fafafa; font-size: 5em; text-shadow: 2px 2px 8px #333333; filter: dropshadow(color=#333333, offx=2, offy=2); }
+#alarm_screen #clock .hours, #clock .minutes { letter-spacing: -5px; }
+#alarm_screen #clock .colon { display: inline-block; position: relative; vertical-align: top; top: -6px; left: -7px; padding: 0; color: #d9d9d9; letter-spacing: -15px; text-shadow: 2px 2px 8px #666666; filter: dropshadow(color=#666666, offx=2, offy=2); }
+#alarm_screen #clock .colon.flash { color: #e9e9e9; text-shadow: 2px 2px 8px #777777; filter: dropshadow(color=#777777, offx=2, offy=2); }

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Hi</title>
+    <link rel="stylesheet" type="text/css" href="/css/master.css" />
+    <script src="/js/jquery.js"></script>
+    <script src="/js/id3v2.js"></script>
+    <script src="/js/jquery.storage.js"></script>
+    <script src="/js/jquery.transform.js"></script>
+    <script src="/js/jquery.rotate.js"></script>
+    <script src="/js/analytics.js"></script>
+    <script src="/js/helloalarm.min.js"></script>
+</head>
+<body>
+    <section id="viewport">
+        <div id="response" class="hide"></div>
+        <div id="command">
+            <input type="text" class="input" x-webkit-speech="x-webkit-speech" speech />
+            <div class="account"></div>
+        </div>
+        <div id="filedrop" class="hide"></div>
+        <div id="alarm_screen" class="screen hide">
+            <div id="config" class="hide">
+                <form class="form">
+                    <input class="selection" type="file" webkitdirectory directory multiple />
+                </form>
+                <div class="info">
+                    <div class="label">alarm music selection</div>
+                    <div class="text">Choose your music folder.</div>
+                </div>
+            </div>
+            <div id="alarm" class="hide">
+                <div class="label">alarm set</div>
+                <div class="details hide">
+                    <div class="date"></div>
+                    <div class="countdown"></div>
+                    <div class="time">
+                        <span class="hours"></span>
+                        <span class="colon">:</span>
+                        <span class="minutes"></span>
+                        <div class="ampm">
+                            <div class="am">am</div>
+                            <div class="pm">pm</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="noset">No alarm set</div>
+                <canvas class="bar bar1"></canvas>
+                <canvas class="bar bar2"></canvas>
+                <canvas class="bar bar3"></canvas>
+                <div class="clock"></div>
+            </div>
+            <div id="editbox" class="hide"></div>
+            <div id="helpbox" class="hide">
+                <div class="label">reference sheet</div>
+                <div class="title">interesting things to say</div>
+                <div class="commands">
+                    <p>
+                        <div class="command">wake me up at 5:30</div>
+                        <div class="command">wake me up in an hour</div>
+                        <div class="command">wake me up at 6am on July 5</div>
+                    </p>
+                    <p>
+                        <div class="command">stop the alarm</div>
+                    </p>
+                    <p>
+                        <div class="command">remind me to do the laundry in an hour</div>
+                        <div class="command">remind me to practice piano at 6pm</div>
+                    </p>
+                </div>
+            </div>
+            <div id="mail" class="hide">
+                <span class="number">12</span>
+            </div>
+            <div id="clock" class="hide">
+                <span class="hours">12</span>
+                <span class="colon">:</span>
+                <span class="minutes">00</span>
+            </div>
+            <div id="music" class="hide">
+                <div class="label">music folder</div>
+                <a class="all">all</a>
+                <a class="inv">inv</a>
+                <button class="close">Select</button>
+                <table class="list"></table>
+            </div>
+        </div>
+        <div id="login_screen" class="screen hide">
+            <div class="frame"></div>
+            <div class="form">
+                <div class="signup hide">
+                    <p>Do you agree with our terms?</p>
+                    <button class="continue">Yes</button>
+                    <button class="no">No</button>
+                </div>
+                <div class="info">Email record match.</div>
+                <div class="logo"></div>
+                <div class="email textbox">
+                    <div class="underlay">Email Address</div>
+                    <input type="text" class="input" value="" />
+                </div>
+                <div class="password textbox">
+                    <div class="underlay">Password</div>
+                    <input type="password" class="input" value="" />
+                </div>
+            </div>
+            <div class="guest">Continue as <em>guest</em>.</div>
+        </div>
+        <div id="weather_screen" class="screen hide">
+            <div class="weather">
+                <div class="condition">Sunny</div>
+                <div class="temperature">
+                    <span class="number">-4</span>
+                    <span class="unit">°C</span>
+                </div>
+            </div>
+            <div class="location">
+                <span class="primary">Waterloo</span>
+                <span class="secondary">, ON</span>
+            </div>
+        </div>
+        <div id="today_screen" class="screen hide">
+            <div class="date">
+                <div class="month">June</div>
+                <div class="day">1</div>
+                <div class="year">, 2011</div>
+            </div>
+        </div>
+        <div id="dougie_screen" class="screen hide"></div>
+        <div id="ironman_screen" class="screen hide"></div>
+        <div id="unicorns_screen" class="screen hide"></div>
+        <div id="schedule_screen" class="screen hide">
+            <div class="schedule">
+                <div class="calendar">
+                    <div class="date">
+                        <span class="month">June</span>
+                        <span class="year">2011</span>
+                    </div>
+                    <div class="head"></div>
+                    <div class="body">
+                        <div class="events"></div>
+                        <div class="boxes"></div>
+                        <div class="rows">
+                            <div class="row"></div>
+                            <div class="space"></div>
+                            <div class="row"></div>
+                            <div class="space"></div>
+                            <div class="row"></div>
+                            <div class="space"></div>
+                            <div class="row"></div>
+                        </div>
+                    </div>
+                    <div class="foot"></div>
+                </div>
+                <div class="day">
+                    <div class="dayweek"></div>
+                    <div class="number"></div>
+                    <div class="title"></div>
+                    <div class="details"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <audio id="speech"></audio>
+    <audio id="alarm_song"></audio>
+</body>
+</html>
