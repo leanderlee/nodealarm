@@ -503,12 +503,12 @@ var Player = function (audio_tag) {
     };
 
     var load_tags = function (file, callback) {
-        if (localStorage[file.fileName]) {
-            return callback(JSON.parse(localStorage[file.fileName]));
+        if (localStorage[file.name]) {
+            return callback(JSON.parse(localStorage[file.name]));
         }
         ID3v2.parseFile(file,function(tags) {
             //to not overflow localstorage
-            localStorage[file.fileName] = JSON.stringify({
+            localStorage[file.name] = JSON.stringify({
                 Title: tags.Title,
                 Artist: tags.Artist,
                 Album: tags.Album,
@@ -526,13 +526,13 @@ var Player = function (audio_tag) {
         var i;
         for (i = 0; i < files.length; i++) {
             var file = files[i];
-            var path = file.webkitRelativePath || file.mozFullPath || file.fileName;
+            var path = file.webkitRelativePath || file.mozFullPath || file.fileName || file.path;
             path = path.indexOf('/') >= 0 ? path.substr(path.indexOf('/')) : path;
             var size = file.size || file.fileSize || 4096;
             if (path.indexOf('.AppleDouble') !== -1) { continue; }
             if (size < 4095) { continue; }
-            if ((file.fileName.indexOf('mp3') !== -1 && Utilities.mp3able) ||
-                ((file.fileName.indexOf('ogg') !== -1  || file.fileName.indexOf('oga') !== -1) && Utilities.oggable)) {
+            if ((file.name.indexOf('mp3') !== -1 && Utilities.mp3able) ||
+                ((file.name.indexOf('ogg') !== -1  || file.name.indexOf('oga') !== -1) && Utilities.oggable)) {
                 queue.push(file);
             }
         }
@@ -1220,9 +1220,9 @@ LoginApp.prototype.draw = function () {
     guest.show().css('opacity', 0);
     setTimeout(function() { guest.animate({ opacity: 1, 'margin-left': '+=30' }, 800); }, 1500);
     var frame = this.screen.find('.frame');
-    frame.css('opacity', 0).scale(0.5).animate({ opacity: 1, scale: '1' }, 300);
+    frame.css('opacity', 0).scale(1).animate({ opacity: 1, scale: 1.0 }, 300);
     var form = this.screen.find('.form');
-    form.css('opacity', 0).scale(0.2).animate({ opacity: 1, scale: '1' }, 200, function () {
+    form.css('opacity', 0).scale(1).animate({ opacity: 1, scale: 1.0 }, 200, function () {
         var email = form.find('.email .input');
         if (email.val() === '') {
             email.focus();
